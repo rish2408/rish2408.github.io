@@ -1,5 +1,5 @@
 //For getting the calendar data
-new GitHubCalendar(".calendar", "Manish-Kumar-DEV", { responsive: true });
+new GitHubCalendar(".calendar", "rish2408", { responsive: true });
 
 //For Changing the texts inside the changingRoles Div
 let changingRolesTextIndex = 0;
