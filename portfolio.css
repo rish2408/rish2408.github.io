@@ -345,7 +345,7 @@ h3 {
 
 /* Contact Footer */
 #contact {
-  background: url("/resources/footer.png");
+  /* background: url("/resources/footer.png"); */
   min-height: 22vh;
   color: black;
 }
