@@ -18,7 +18,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background-color: #a2b0ff;
+  background-color: #34975f;
 }
 
 body::-webkit-scrollbar-thumb {
@@ -189,7 +189,7 @@ h3 {
 /* Proficiencies Div */
 #proficiencies {
   min-height: 80vh;
-  background-color: #7e2cde;
+  background-color: #34975f;
   background-color: #000000;
 }
 
