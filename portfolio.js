@@ -4,10 +4,9 @@ new GitHubCalendar(".calendar", "rish2408", { responsive: true });
 //For Changing the texts inside the changingRoles Div
 let changingRolesTextIndex = 0;
 const changingRolesText = [
-  "I am a Designer",
   "I am a Problem Solver",
   "I am a Continuos Learner",
-  "I am a Full Stack Developer",
+  "I am a Backend Developer",
 ];
 
 setInterval(() => {
