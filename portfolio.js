@@ -1,25 +1,49 @@
-//For getting the calendar data
-new GitHubCalendar(".calendar", "rish2408", { responsive: true });
-
-//For Changing the texts inside the changingRoles Div
-let changingRolesTextIndex = 0;
-const changingRolesText = [
-  "I am a Problem Solver",
-  "I am a Continuos Learner",
-  "I am a Backend Developer",
+// Typing Effect for Roles
+const roles = [
+  "Full Stack Developer",
+  "Spring Boot & Angular Specialist",
+  "Problem Solver",
+  "Backend API Developer",
+  "Frontend Integrator"
 ];
 
-setInterval(() => {
-  if (changingRolesTextIndex >= changingRolesText.length) {
-    changingRolesTextIndex = 0;
-  }
-  changingRoles(changingRolesTextIndex++);
-}, 2000);
+let roleIndex = 0;
+let charIndex = 0;
+const typingSpeed = 100;
+const erasingSpeed = 50;
+const delayBetweenRoles = 1500;
 
-function changingRoles(changingRolesTextIndex) {
-  if (changingRolesTextIndex < changingRolesText.length) {
-    let changingRolesDiv = document.getElementById("changingRoles");
-    changingRolesDiv.innerHTML = `<h2>${changingRolesText[changingRolesTextIndex]}</h2>`;
-    changingRolesTextIndex += 1;
+const roleElement = document.getElementById("changingRoles");
+
+function typeRole() {
+  if (charIndex < roles[roleIndex].length) {
+    roleElement.textContent += roles[roleIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(typeRole, typingSpeed);
+  } else {
+    setTimeout(eraseRole, delayBetweenRoles);
   }
 }
+
+function eraseRole() {
+  if (charIndex > 0) {
+    roleElement.textContent = roles[roleIndex].substring(0, charIndex - 1);
+    charIndex--;
+    setTimeout(eraseRole, erasingSpeed);
+  } else {
+    roleIndex = (roleIndex + 1) % roles.length;
+    setTimeout(typeRole, typingSpeed);
+  }
+}
+
+// Start typing animation on page load
+document.addEventListener("DOMContentLoaded", () => {
+  if (roles.length) {
+    setTimeout(typeRole, 1000);
+  }
+
+  // GitHub Calendar Integration
+  GitHubCalendar(".calendar", "rish2408", {
+    responsive: true
+  });
+});

@@ -1,3 +1,4 @@
+/* Smooth Scroll */
 * {
   scroll-behavior: smooth;
 }
@@ -5,356 +6,271 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #031022;
+  background-color: #f7f7f7;
 }
 
-.text_white
-{
+/* Typography */
+h1, h2, h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+.text_white {
   color: #ffffff;
   margin-bottom: 8px;
 }
 
+/* Scrollbar Styling */
 body::-webkit-scrollbar {
   width: 10px;
 }
-
 body::-webkit-scrollbar-track {
-  background-color: #34975f;
+  background-color: #e0e0e0;
 }
-
 body::-webkit-scrollbar-thumb {
-  background-color: green;
+  background-color: #166D3B;
+  border-radius: 5px;
 }
 
-h1,
-h2,
-h3 {
-  font-family: "Poppins";
+/* Mobile Navbar */
+.navbar {
+  margin: 0 -15px;
+  background-color: #000;
 }
-
-/* Mobile Top Nav Bar */
-.container-fluid > .navbar {
-  margin: 0px -15px;
-  background-color: #000000;
-}
-
 .navbar-toggler {
   background-color: white;
 }
 
-/* Side Nav Bar */
+/* Sidebar Navigation */
 #sideNavBar {
-  background-color: #000000;
+  background-color: #000;
   height: 100vh;
   position: fixed;
-  z-index: 1;
+  z-index: 10;
 }
-
-.navbar-nav i,
-.navbar-nav a {
-  color: rgba(255, 255, 255, 0.712) !important;
+.navbar-nav a, .navbar-nav i {
+  color: rgba(255, 255, 255, 0.7) !important;
 }
-
-.navbar-nav li:hover i {
-  color: #166D3B !important;
-}
-
+.navbar-nav li:hover i,
 .navbar-nav li:hover a {
-  color: white !important;
+  color: #ffffff !important;
 }
 
 /* Profile Section */
-
-
-
 #profileSection > .row {
-  background: linear-gradient(
-    #434343 0%,
-    #000000 100%
-    ),
-    url("./resources/profile-bg.jpg");
+  background: linear-gradient(#434343, #000000), url("./resources/profile-bg.jpg");
   background-size: cover;
-  padding: 100px 0px;
+  padding: 100px 20px;
+  color: white;
 }
 
-#profileSection .profileTitle {
-  margin: 60px 0px;
+.profileTitle {
+  margin: 60px 0;
 }
 
 #profileSection h1 {
-  font-size: 62px;
+  font-size: 3rem;
 }
 
 .highlightedText {
   position: relative;
-  z-index: 3;
+  z-index: 2;
 }
-
 .highlightedText:after {
+  content: "";
   background-color: #166D3B;
-  content: " ";
   height: 20%;
+  width: 100%;
   position: absolute;
   left: 0;
   top: 55%;
-  margin-left: -5px;
-  width: 100%;
   z-index: -1;
 }
 
+/* Changing Roles */
 .changingRolesDiv {
   position: relative;
 }
-
 .aboutDiv {
   font-size: 15px;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
 }
 
-.profileButtons {
-  position: relative;
-}
-
-.contactInProfileSection {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: fit-content;
-  text-align: left;
-}
-
-@media only screen and (max-width: 1025px) {
-  .changingRolesDiv {
-    white-space: nowrap;
-    left: 25px;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  .changingRolesDiv {
-    left: 0;
-  }
-}
-
-@media only screen and (max-width: 426px) {
-  .changingRolesDiv {
-    white-space: pre-wrap;
-    min-height: 185px;
-  }
-}
-
-/* Skills Div */
-
+/* Skills Section */
 #skills {
-  min-height: 100vh;
+  padding: 50px 0 20px 0; /* Reduced bottom padding */
 }
 
-.skillsTitle > h1 {
-  font-weight: 700;
+.skillsTitle h1 {
   position: relative;
   width: fit-content;
 }
 
-.skillsTitle > h1:after {
-  background-color: #34975f;
-  content: " ";
-  height: 20%;
+.skillsTitle h1:after {
+  content: "";
   position: absolute;
+  background-color: #34975f;
+  height: 20%;
+  width: 100%;
   left: -5px;
   top: 55%;
-  width: calc(100% + 10px);
   z-index: -1;
 }
 
 .skillImages {
-  padding: 30px;
+  padding: 20px;
+  text-align: center;
 }
 
 .skillImages:hover {
-  transition: 0.3s;
+  transition: 0.3s ease-in-out;
   padding: 0px;
   opacity: 1;
 }
 
 .skillImages > div {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
 }
 
-.margin_top10
-{
-  margin-top: 20px;
+.margin_top10 {
+  margin-top: 15px;
 }
 
-/* Proficiencies Div */
+/* Proficiencies */
 #proficiencies {
-  min-height: 80vh;
-  background-color: #34975f;
-  background-color: #000000;
-}
-
-.proficienciesTitle > h1 {
+  background-color: #000;
+  padding: 50px 0;
   color: white;
-  font-weight: 700;
-  position: relative;
-  width: fit-content;
-  z-index: 3;
 }
-
-.proficienciesTitle > h1:after {
-  background-color: #34975f;
-  content: " ";
-  height: 20%;
+.proficienciesTitle h1 {
+  position: relative;
+}
+.proficienciesTitle h1:after {
+  content: "";
   position: absolute;
+  background-color: #34975f;
+  height: 20%;
+  width: 100%;
   left: -5px;
   top: 55%;
-  width: calc(100% + 10px);
   z-index: -1;
 }
-
 #proficiencies h4 {
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
-  font-family: "Poppins";
-  color: white;
 }
 
-/* Project Div */
+/* Projects Section */
 #project {
-  min-height: 120vh;
+  padding: 50px 0;
+  background-color: #f8f9fa;
 }
-
-.projectTitle > h1 {
-  font-weight: 700;
+.projectTitle h1 {
   position: relative;
-  width: fit-content;
 }
-
-.projectTitle > h1:after {
+.projectTitle h1:after {
+  content: "";
   background-color: #34975f;
-  content: " ";
   height: 20%;
+  width: 100%;
   position: absolute;
-  left: -5px;
   top: 55%;
-  width: calc(100% + 10px);
+  left: -5px;
   z-index: -1;
 }
 
-#project .card {
-  min-height: 450px;
+.card {
+  transition: box-shadow 0.3s ease-in-out;
 }
-
-#project .card .card-title {
-  font-size: 28px;
-  font-weight: 600;
+.card:hover {
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
 }
-
-#project .card:hover {
-  transition: 0.5s;
-  border: none;
-  box-shadow: 11px 11px 30px #c7c7c7, -11px -11px 30px #ffffff;
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
-
-#project .card:hover .card-title {
-  color: white;
+.card-stacks {
+  margin-top: 15px;
 }
-
-#project .card:hover > .card-body {
-  animation: 0.5s linear animateCardBackground;
-  background-color: rgba(21, 145, 77, 0.8);
-  border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 4px;
-}
-
-#project .card-body {
-  position: relative;
-}
-
-.link {
-  position: absolute;
-  right: 0;
-  top: 5px;
-}
-
-#project .card-body .card-stacks {
-  position: absolute;
-  text-align: center;
-  bottom: 5px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-#project .card-body img {
+.card-stacks img {
   width: 30px;
+  margin: 0 5px;
 }
-
 .card-links {
   display: flex;
   justify-content: center;
+  gap: 10px;
 }
 
-.card-links .btn {
-  margin: 4px;
+/* Statistics */
+#statistics {
+  padding: 50px 0;
 }
-
-@keyframes animateCardBackground {
-  from {
-    background-color: transparent;
-  }
-  to {
-    background-color: rgba(21, 145, 77, 0.8);
-  }
-}
-
-/* Stats */
-.statisticsTitle > h1 {
-  font-weight: 700;
-  margin-top: 100px;
+.statisticsTitle h1 {
   position: relative;
-  width: fit-content;
 }
-
-.statisticsTitle > h1::after {
+.statisticsTitle h1:after {
+  content: "";
   background-color: #34975f;
-  content: " ";
   height: 20%;
+  width: 100%;
   position: absolute;
-  left: -5px;
   top: 55%;
-  width: calc(100% + 10px);
+  left: -5px;
   z-index: -1;
 }
-
 .individualStat {
-  width: 140px;
+  width: 150px;
   text-align: center;
+  margin: 20px;
 }
-
-.individualStat > div:nth-child(1) {
-  margin: auto;
-  font-size: 28px;
-  font-weight: 600;
+.individualStat > div:first-child {
   height: 130px;
   width: 130px;
+  margin: auto;
+  border-radius: 50%;
+  font-size: 26px;
+  font-weight: 600;
   border: 10px solid #506aff;
-  border-radius: 65px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Contact Footer */
+/* Contact Section */
 #contact {
-  /* background: url("/resources/footer.png"); */
-  min-height: 22vh;
+  padding: 30px 0;
+  background-color: #fff;
+  text-align: center;
   color: black;
 }
-
 .contactIcons {
   font-size: 30px;
+  transition: color 0.3s ease;
+}
+.contactIcons:hover {
+  color: #166D3B;
+  cursor: pointer;
 }
 
-.contactIcons:hover {
-  color: black;
-  cursor: pointer;
+/* Responsive Tweaks */
+@media (max-width: 1024px) {
+  .changingRolesDiv {
+    left: 25px;
+    white-space: nowrap;
+  }
+}
+@media (max-width: 768px) {
+  .changingRolesDiv {
+    left: 0;
+    white-space: normal;
+  }
+}
+@media (max-width: 426px) {
+  .changingRolesDiv {
+    min-height: 185px;
+    white-space: pre-wrap;
+  }
 }
